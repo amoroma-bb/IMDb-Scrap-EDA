@@ -33,3 +33,12 @@ Scrap the genre list one to last
 * When rank over 999, it conclues colon ','
 
 # Data Analysis
+
+## 1. Data Cleaning and validation
+- replace Certificate, Gross, Metascore ' ' with np.nan
+- reset runtime to int
+- reset the genre to split type column
+
+## 2. Find the correlation 
+
+## 3. Data Visualization
