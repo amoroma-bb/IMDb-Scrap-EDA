@@ -67,3 +67,32 @@ Scrap the genre list one to last
 
 
 # Machine Learning 
+## Data Cleaning and validation
+    1. replace certificate to num list
+    2. fillna of Metascore and Gross with mean
+    3. replace rating to 5 categories (> 9.5, 8.5 ~ 9.5, 7 ~ 8.5, 5 ~ 7, < 5)
+
+## Normalization 
+    - (x - miu)/range for each x in title, year, certificate, metascore, votes, gross, movie_time_min
+
+## Simple machine learning model
+    - LogisticRegression
+    - Training Accurancy: 74.78 %
+    - Testing Accurancy: 74.02 %
+
+## Hyperparameter Tuning and Cross Validation
+    - DecisionTreeClassifier
+        CV result: 89.9 %
+        params: max_depth=19, min_samples_split=10, random_state=17
+    - SVC
+        CV result: 90.6 %
+        params: C=1000, gamma=1, random_state=17
+    - RandomForestClassifier
+        CV result: 97.1 %
+        params: bootstrap=False, max_features=3, random_state=17
+    - LogisticRegression
+        CV result 75.2 %
+        params: C=10.0, penalty='l1', random_state=17, solver='liblinear'
+    - KNeighborsClassifier
+        CV result: 95.6 %
+        params: metric='manhattan', n_neighbors=19, weights='distance'
